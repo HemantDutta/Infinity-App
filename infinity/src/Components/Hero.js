@@ -1,8 +1,10 @@
+import '../assets/css/HeroStyle.css';
+
 export const Hero = () => {
 
     return(
         <>
-            <div className="text-light col-xxl-12 px-4 py-5" style={{backgroundColor: '#181818'}}>
+            <div className="text-light col-xxl-12 px-4 py-5 hero-cont" style={{backgroundColor: '#181818'}}>
                 <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
                     <div className="col-10 col-sm-8 col-lg-6">
                         <img src="https://w.wallhaven.cc/full/j3/wallhaven-j3p215.jpg" className="d-block mx-lg-auto img-fluid" alt="HeroImg" width={700} height={500} loading="lazy" />
