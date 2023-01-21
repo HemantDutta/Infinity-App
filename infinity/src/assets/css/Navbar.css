@@ -1,0 +1,54 @@
+:root {
+    --primary: #ff6c00;
+}
+
+.brandName {
+    font-family: 'Unbounded';
+}
+
+.hdPrimary{
+    color: var(--primary);
+}
+
+.hdInput {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    color: var(--primary);
+}
+
+.hdInput:focus {
+    background-color: transparent;
+    color: var(--primary);
+}
+
+.hdbtn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--primary);
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.hdbtn:hover{
+    background-color: var(--primary);
+    outline: none;
+    color: white;
+}
+
+.hdbtn:focus, .hdbtn:active{
+    box-shadow: 0 0 0 0.25rem var(--primary);
+}
