@@ -3,7 +3,7 @@ import '../assets/css/Navbar.css';
 export const Navbar = () => {
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor: '#000000'}}>
+            <nav className="navbar navbar-expand-lg navbar-dark sticky-top" style={{backgroundColor: '#000000'}}>
                 <div className="container-fluid">
                     <a className="navbar-brand" href="#"><span className="text-uppercase brandName">Inf<span className="hdPrimary brandName">in</span>ity</span></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

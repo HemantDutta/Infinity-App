@@ -26,7 +26,7 @@ export const Grid = () => {
     }
 
     useEffect(() => {
-        getContent();
+        // getContent();
     }, []);
 
     return (
