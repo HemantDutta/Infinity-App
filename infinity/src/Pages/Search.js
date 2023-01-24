@@ -29,6 +29,21 @@ export const Search = () => {
             })
     }
 
+    const getNew = async () => {
+        await client.photos.search({per_page: 32, page: 1, query: query})
+            .then(res => {
+                console.log(res);
+                let images = res.photos;
+                setData(images);
+                console.log(data);
+                setLoad(false);
+                console.log("Page no: "+pageNo);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
     const getContent = async () => {
 
         await client.photos.search({per_page: 32, page: pageNo, query: query})
@@ -58,9 +73,13 @@ export const Search = () => {
     };
 
     useEffect(()=>{
-        getContent();
-        console.log('get content effect');
-    }, [pageNo, query]);
+        if(pageNo === 1){} else {getContent();
+            console.log('content effect')}
+    }, [pageNo]);
+
+    useEffect(()=>{
+        getNew();
+    }, [query]);
 
     useEffect(()=>{
         window.addEventListener("scroll", handleScroll);
