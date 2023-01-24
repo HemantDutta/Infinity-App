@@ -45,6 +45,15 @@
     object-fit: contain;
 }
 
+.modalImg {
+    overflow: hidden;
+}
+
+#modalImg {
+    object-fit: cover;
+    width: 100%;
+}
+
 @media (max-width: 575px) {
     .grid-content{
         grid-template-columns: repeat(1, 1fr);
