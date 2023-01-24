@@ -1,11 +1,27 @@
 import '../assets/css/Navbar.css';
+import {Link, useNavigate} from "react-router-dom";
+import {useState} from "react";
 
 export const Navbar = () => {
+    const [query, setQuery] = useState('');
+
+    const navigate = useNavigate();
+
+    function getData(){
+
+        if(query.length === 0){
+            alert('Please enter a query first');
+        }
+        else {
+            navigate(`/search/${query}`);
+        }
+
+    }
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark sticky-top" style={{backgroundColor: '#000000'}}>
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#"><span className="text-uppercase brandName">Inf<span className="hdPrimary brandName">in</span>ity</span></a>
+                    <Link className="navbar-brand" to={'/'}><span className="text-uppercase brandName">Inf<span className="hdPrimary brandName">in</span>ity</span></Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>
@@ -33,8 +49,8 @@ export const Navbar = () => {
                         {/*    </li>*/}
                         {/*</ul>*/}
                         <form className="d-flex">
-                            <input className="form-control me-2 hdInput" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn hdbtn" type="submit"><i className="fa-solid fa-search"></i></button>
+                            <input className="form-control me-2 hdInput" type="search" placeholder="Search" aria-label="Search" onChange={(e)=>setQuery(e.target.value)}/>
+                            <button className="btn hdbtn" type="button" onClick={getData}><i className="fa-solid fa-search" ></i></button>
                         </form>
                     </div>
                 </div>

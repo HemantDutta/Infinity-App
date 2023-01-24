@@ -1,12 +1,16 @@
-import {createClient} from "pexels";
+import {Navbar} from "../Components/Navbar";
 import {useEffect, useState} from "react";
-import '../assets/css/GridStyle.css';
+import {createClient} from "pexels";
+import {useParams} from "react-router-dom";
 
-export const Grid = () => {
+export const Search = () => {
 
     const [pageNo, setPageNo] = useState(1);
     const [load, setLoad] = useState(true);
     const [data, setData] = useState([]);
+
+    let {query} = useParams();
+    console.log(query);
 
     const client = createClient('ZtDkSHkkb20vljXydzL79IG48JZ3zUiXiSLlSXH7xut6Jqrpzhg2rOTQ');
 
@@ -25,9 +29,9 @@ export const Grid = () => {
             })
     }
 
-   const getContent = async () => {
+    const getContent = async () => {
 
-       await client.photos.curated({per_page: 32, page: pageNo})
+        await client.photos.search({per_page: 32, page: pageNo, query: query})
             .then(res => {
                 console.log(res);
                 let images = res.photos;
@@ -43,29 +47,28 @@ export const Grid = () => {
 
 
     const handleScroll = async () => {
-      try{
-        if(window.innerHeight + document.documentElement.scrollTop + 5 > document.documentElement.scrollHeight){
-            setLoad(true);
-            setPageNo((prev)=> prev + 1);
+        try{
+            if(window.innerHeight + document.documentElement.scrollTop + 5 > document.documentElement.scrollHeight){
+                setLoad(true);
+                setPageNo((prev)=> prev + 1);
+            }
+        } catch (err) {
+            console.log(err);
         }
-      } catch (err) {
-          console.log(err);
-      }
     };
 
     useEffect(()=>{
         getContent();
         console.log('get content effect');
-    }, [pageNo]);
+    }, [pageNo, query]);
 
-   useEffect(()=>{
-       window.addEventListener("scroll", handleScroll);
-       console.log('scroll effect');
-   },[]);
-
-
-    return (
+    useEffect(()=>{
+        window.addEventListener("scroll", handleScroll);
+        console.log('scroll effect');
+    },[]);
+    return(
         <>
+            <Navbar/>
             <div className="grid-cont" id="gridCont">
                 <div className="top-head text-center">
                     <h1 className="p-0 m-0 text-light fw-bold py-4">Take your Pick</h1>
@@ -91,7 +94,7 @@ export const Grid = () => {
                 </div>
                 {load && `<div className="text-center"><img src="images/loader.gif" alt="loading..."/></div>`}
             </div>
-        {/*Modal*/}
+            {/*Modal*/}
             <div>
                 {/* Button trigger modal */}
                 <button type="button" className="btn btn-primary d-none" id="modal" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -116,7 +119,7 @@ export const Grid = () => {
                     </div>
                 </div>
             </div>
-        {/*Modal End*/}
+            {/*Modal End*/}
         </>
     )
 }
