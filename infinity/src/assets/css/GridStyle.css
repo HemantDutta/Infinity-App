@@ -3,6 +3,20 @@
     min-height: 50vh;
 }
 
+#home{
+    text-decoration: none;
+    color: white;
+    transition: all 0.4s ease;
+}
+
+#home:hover{
+    color: var(--primary);
+}
+
+.primary-color{
+    color: var(--primary);
+}
+
 .grid-content{
     display: grid;
     grid-template-columns: repeat(4, 1fr);

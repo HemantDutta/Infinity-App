@@ -18,6 +18,7 @@ export const Grid = () => {
                 console.log(res);
                 document.getElementById('modalTitle').innerText = `Clicked by: ${res.photographer}`;
                 document.getElementById('modalImg').src = res.src.original;
+                document.getElementById('download').href = res.src.original;
                 document.getElementById('modal').click();
             })
             .catch(err => {
@@ -110,7 +111,7 @@ export const Grid = () => {
                             </div>
                             <div className="modal-footer">
                                 {/*<button type="button" className="btn btn-outline-light" data-bs-dismiss="modal">Close</button>*/}
-                                <button type="button" className="btn hdbtn">Download</button>
+                                <a href="" download="infinity-wallpaper" id="download"><button type="button" className="btn hdbtn">Download</button></a>
                             </div>
                         </div>
                     </div>

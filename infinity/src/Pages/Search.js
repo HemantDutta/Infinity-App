@@ -1,7 +1,7 @@
 import {Navbar} from "../Components/Navbar";
 import {useEffect, useState} from "react";
 import {createClient} from "pexels";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 export const Search = () => {
 
@@ -22,6 +22,7 @@ export const Search = () => {
                 console.log(res);
                 document.getElementById('modalTitle').innerText = `Clicked by: ${res.photographer}`;
                 document.getElementById('modalImg').src = res.src.original;
+                document.getElementById('download').href = res.src.original;
                 document.getElementById('modal').click();
             })
             .catch(err => {
@@ -88,6 +89,11 @@ export const Search = () => {
     return(
         <>
             <Navbar/>
+            {/*Breadcrumb*/}
+            <div className="bread mt-2 p-2 bg-dark">
+                <span className="text-uppercase text-light"><Link to={'/'} id="home">Home</Link> > Search: <span className="primary-color">{query}</span></span>
+            </div>
+            {/*Breadcrumb end*/}
             <div className="grid-cont" id="gridCont">
                 <div className="top-head text-center">
                     <h1 className="p-0 m-0 text-light fw-bold py-4">Take your Pick</h1>
@@ -131,8 +137,8 @@ export const Search = () => {
                                 <img src="" alt="" id="modalImg"/>
                             </div>
                             <div className="modal-footer">
-                                {/*<button type="button" className="btn btn-outline-light" data-bs-dismiss="modal">Close</button>*/}
-                                <button type="button" className="btn hdbtn">Download</button>
+
+                                <a href="" download="infinity-wallpaper" id="download"><button type="button" className="btn hdbtn">Download</button></a>
                             </div>
                         </div>
                     </div>
