@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Infinity-App/static/css/main.f008d919.css",
+    "main.js": "/Infinity-App/static/js/main.74474b5e.js",
+    "static/media/heroBG (2).gif": "/Infinity-App/static/media/heroBG (2).5d4229dfe1537a4112c6.gif",
+    "index.html": "/Infinity-App/index.html",
+    "main.f008d919.css.map": "/Infinity-App/static/css/main.f008d919.css.map",
+    "main.74474b5e.js.map": "/Infinity-App/static/js/main.74474b5e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f008d919.css",
+    "static/js/main.74474b5e.js"
+  ]
+}
