@@ -61,12 +61,14 @@
 
 .modalImg {
     overflow: auto;
-    height: max-content;
+    height: 500px;
+    width: 500px;
 }
 
 #modalImg {
     object-fit: contain;
     width: 100%;
+    height: 100%;
 }
 
 .modal-header, .modal-body, .modal-footer {
