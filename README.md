@@ -30,6 +30,6 @@ Ready to dive into Infinity? Here's how:
    git clone https://github.com/HemantDutta/Infinity-App.git
    ```
 
-2. CD into the project and run ```npm start```.
+2. CD into the project and run ```npm install``` and then ```npm start```.
 
 3. Let Infinity take you on a wallpaper adventure!
