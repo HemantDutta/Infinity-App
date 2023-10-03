@@ -1,3 +1,7 @@
+<div align="center">
+    <img src="https://github.com/HemantDutta/Infinity-App/blob/main/infinity/public/images/logo.png" alt="ArmorElite Logo" width="20%">
+</div>
+
 # Infinity: Endless Wallpapers
 
 Hey there wallpaper enthusiasts! Welcome to **Infinity**, the ultimate wallpaper engine that'll keep your screens looking fresh and beautiful. 🌄
